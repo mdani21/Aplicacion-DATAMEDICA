@@ -1,0 +1,109 @@
+0.- Deploy (from Remix). 
+
+1.- Get the contract Address. 
+
+2.- Make sure that the ABI is set in contract.js
+
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "_userid",
+				"type": "string"
+			}
+		],
+		"name": "thereisanewhistory",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_userid",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_evento",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_urloffile",
+				"type": "string"
+			}
+		],
+		"name": "addnewevent",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "OK",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_userid",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "numofchunk",
+				"type": "uint256"
+			}
+		],
+		"name": "getEvents",
+		"outputs": [
+			{
+				"internalType": "string[10]",
+				"name": "_history",
+				"type": "string[10]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_userid",
+				"type": "string"
+			}
+		],
+		"name": "newHH",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+
+
+before
+
+jacinto@dragona:~$ docker run --detach --publish 8545:8545 trufflesuite/ganache:latest -defaultBalanceEther 9000000000000000000000
+1284ad6393b4b470ed5ed18e380c0f4e1c31c9124bf7334d6d0091d02b644a95
+
+Como ejecutar: 
+Primero instalar las librerias necesarias para ejecutar el código
+$ npm install    -> Instala las dependencias necesarias para el proyecto “node_modules” 
+$ npm install --save ethers   -> instala el paquete para ejecutar el script de ethers.
+$ npm install  ipfs-core   -> instala el paquete para ejecutar el script de IPFS.
+Para ejecutar se utiliza el comando:
+$ npm run serve
+Luego se hace click en el link “http: //localhost:9011” para interactuar con la página de prueba.
+Para terminar la ejecución solo con Ctrl + C.
+
+
+
+
+
+

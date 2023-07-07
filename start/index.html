@@ -1,0 +1,85 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>DATA MEDICA</title>
+  <link rel="icon" type="image/png" href="metamask-fox.svg">
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="metamask.css" type="text/css">
+</head>
+
+<body style="background-color: #a8e5eb;">
+  <main class="container-fluid">
+    <header>
+      <h1 class="text-center" style="color: blue;"><b>Data Médica</b></h1>
+    </header>
+
+
+    <!-- Part 1 Configuracion de acciones y estados -->
+    <section>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+              <h2 class="card-title" style="color:rgb(10, 10, 10)"><b>Activar Sistema</b></h2>
+              <button class="btn btn-primary btn-lg btn-block mb-3" id="connectButton" disabled></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Part 2 Contract  -->
+    <section>
+    <div class="row">
+          <!-- Registro de usuario-->
+          <div class="col-md-4 card-body " >
+            <h2 class="card-title"> <b>Registro de Usuario</b></h2>
+
+            <label><h4>ID de usuario: </h4></label>
+            <input type="text" id="user_registry"></input>
+            <button class="btn btn-primary btn-lg btn-block mb-3" id="registry"><b>Registrar Persona</b></button>
+          </div> 
+            <!-- Introducción de un evento -->
+          <div class="col-md-4 card-body ">
+            <h2 class="card-title"><b>Guardar Informe</b></h2>
+            <label><h4>ID de usuario: </h4></label>
+            <input type="text" id="user_event"></input><br>
+            <label for="type_event"><h4>Tipo: </h4></label>
+            <select class="form-control" style= "color: #064d53" id="type_event" >
+              <option><h4>Consulta Médica</h4></option> 
+              <option><h4>Reporte de Laboratorio</h4></option>
+              <!-- <option><h4>Tipo3</h4></option> 
+              <option><h4>Tipo4</h4></option>
+              <option><h4>Tipo5</h4></option> 
+              <option><h4>Tipo6</h4></option> -->
+            </select>
+            <label><b><h4>Subir informe: </h4></b></label>
+            <input type="file" id="file_event" ></input> 
+            <button class="btn btn-primary btn-lg btn-block mb-3" id="addEvent" ><b>Añadir Informe</b></button>
+          </div>  
+            <!-- Lectura de informes-->
+            <div class="col-md-4 card-body " >
+              <h2 class="card-title"><b>Lectura de informes</b></h2>
+              <label><h4>ID de usuario: </h4></label>
+            <input type="text" id="user_read"></input>
+            <label><h5>Número de informe: </h5></label>
+            <input type="number" id="chunk_read"></input>
+            <button class="btn btn-primary btn-lg btn-block mb-3" id="getEvents"><b>Mostrar informe</b></button>
+            
+          </div>
+        </div>
+    </section>
+    <div id="contenedor"></div>
+    <div id="contenedor2"></div>
+  </main>
+
+  <script src="node_modules/@metamask/onboarding/dist/metamask-onboarding.bundle.js" defer></script>
+  <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="application/javascript"></script>
+  <script src="contract.js" defer></script>
+ 
+</body>
+  
+</html>
